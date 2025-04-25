@@ -24,7 +24,7 @@
       top: 0;
       z-index: 100;
     }
-
+  
     nav ul {
       list-style: none;
       margin: 0;
@@ -32,20 +32,51 @@
       display: flex;
       justify-content: center;
     }
-
+  
     nav ul li {
       margin: 0 15px;
     }
-
+  
     nav ul li a {
       color: white;
       text-decoration: none;
       font-size: 1.1rem;
       transition: color 0.3s ease;
     }
-
+  
     nav ul li a:hover {
       color: #f7b801;
+    }
+  
+    /* Hamburger Icon for Mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 101;
+    }
+  
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      border-radius: 5px;
+    }
+  
+    /* Initially hide the menu on mobile */
+    .nav-links {
+      display: flex;
+    }
+  
+    .nav-links.mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
     }
 
     header {
@@ -114,26 +145,46 @@
       background-color: #f1f5f9;
     }
 
-    .testimonial {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
+    /* Testimonial Section */
+#testimonials {
+  padding: 50px 20px;
+  text-align: center;
+}
 
-    .testimonial-item {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 45%;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
+.testimonial {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    .testimonial-item:hover {
-      transform: translateY(-10px);
-    }
+.testimonial-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .testimonial {
+    justify-content: center; /* Center the items on mobile */
+  }
+
+  .testimonial-item {
+    width: 80%; /* Adjust width to be more mobile-friendly */
+  }
+}
+
 
     footer {
       background-color: #0c2d57;
@@ -183,6 +234,27 @@
         text-align: center;
         margin-bottom: 20px;
       }
+
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex; /* Show hamburger on small screens */
+      }
+  
+      .nav-links {
+        display: none; /* Hide the nav links initially */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+  
+      .nav-links.mobile-menu {
+        display: flex; /* Show the menu when it's toggled */
+      }
+  
+      nav ul li {
+        margin: 15px 0;
+      }
     }
 
   </style>
@@ -191,13 +263,18 @@
 
   <!-- Navigation Bar -->
   <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#why">Why Choose Us?</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
+    <button class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#" onclick="closeMenu()">Home</a></li>
+      <li><a href="#why" onclick="closeMenu()">Why Choose Us?</a></li>
+      <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
+      <li><a href="#" onclick="closeMenu()">Contact</a></li>
     </ul>
   </nav>
 
@@ -277,6 +354,15 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    // JavaScript to toggle the mobile menu visibility
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('mobile-menu');
+    }
+    function closeMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.remove('mobile-menu');
+    }
   </script>
 
 </body>
