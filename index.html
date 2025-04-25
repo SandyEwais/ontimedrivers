@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="https://img.icons8.com/?size=100&id=11910&format=png&color=000000">
+  <title>Ontime Drivers</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #0c2d57;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f7b801;
+    }
+
+    header {
+      background-color: #0c2d57;
+      color: white;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-image: url('https://via.placeholder.com/1920x1080'); /* Background Image */
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      margin-top: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      background-color: #f7b801;
+      color: #000;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e2a700;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .alt-background {
+      background-color: #f1f5f9;
+    }
+
+    .testimonial {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-item:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      background-color: #0c2d57;
+      color: #eee;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-contact-info, .footer-social-links {
+      flex: 1;
+      margin: 10px;
+      text-align: left;
+    }
+
+    .footer-contact-info p, .footer-social-links p {
+      font-size: 1rem;
+      color: #fff;
+      margin: 5px 0;
+    }
+
+    .footer-contact-info a, .footer-social-links a {
+      color: #f7b801;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin: 0 10px;
+    }
+
+    .footer-contact-info a:hover, .footer-social-links a:hover {
+      color: #e2a700;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-contact-info, .footer-social-links {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#why">Why Choose Us?</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div>
+      <h1>Ontime Drivers</h1>
+      <p>Reliable. Fast. Professional Driving Services You Can Trust.</p>
+      <button class="cta-button" onclick="window.location='mailto:info@ontimedrivers.com'">Contact Us</button>
+    </div>
+  </header>
+
+  <section class="alt-background" id="why">
+    <h2>Why Choose Us?</h2>
+    <p>
+      At Ontime Drivers, we pride ourselves on punctuality, safety, and customer satisfaction.
+      Whether it's for personal transport, corporate services, or logistics — our drivers are trained,
+      vetted, and always ready to deliver exceptional service.
+    </p>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Ontime Drivers was founded with a simple mission: to provide safe, reliable, and timely driving services to people who value efficiency. Over the years, we have expanded our services to meet the growing needs of our clients, offering everything from private rides to corporate transportation and delivery logistics. Our team of highly trained and vetted drivers ensures that your journey is comfortable, safe, and on time, every time.
+    </p>
+  </section>
+
+  <section class="alt-background" id="services">
+    <h2>Our Services</h2>
+    <p>
+      🚗 Private Driver Service &nbsp; | &nbsp;
+      🕒 Timely Pickups & Drop-offs &nbsp; | &nbsp;
+      🧾 Corporate & Contract Services &nbsp; | &nbsp;
+      📦 Delivery & Logistics
+    </p>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <div class="testimonial-item">
+        <p>"Ontime Drivers made my trip so much easier. The driver was punctual and friendly, and the ride was smooth and comfortable."</p>
+        <span>- John Doe</span>
+      </div>
+      <div class="testimonial-item">
+        <p>"Amazing service! I rely on Ontime Drivers for all my corporate events, and they’ve never let me down. Always professional!"</p>
+        <span>- Sarah Smith</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Contact Info and Social Media Links -->
+  <footer>
+    <div class="footer-content">
+      <!-- Contact Information Column -->
+      <div class="footer-contact-info">
+        <p><strong>Contact Information</strong></p>
+        <p>Email: <a href="mailto:info@ontimedrivers.com">info@ontimedrivers.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      </div>
+
+      <!-- Social Media Links Column -->
+      <div class="footer-social-links">
+        <p><strong>Follow Us</strong></p>
+        <p>
+          <a href="https://facebook.com" target="_blank">Facebook</a> | 
+          <a href="https://twitter.com" target="_blank">Twitter</a> | 
+          <a href="https://instagram.com" target="_blank">Instagram</a> | 
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+    <p>&copy; <span id="year"></span> Ontime Drivers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
